@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.2.154/spring_cache
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+    
+#employee类中的dId和数据库中的d_id不一致，可以通过开启mybatis的驼峰命名法的方式解决
+mybatis:  configuration:    map-underscore-to-camel-case: true
+    
+#开启日志
+logging:  level:    com.jettech.cache.mapper: debug
+    
+debug: true
