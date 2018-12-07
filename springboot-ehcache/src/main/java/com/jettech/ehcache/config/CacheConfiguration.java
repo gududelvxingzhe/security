@@ -1,6 +1,8 @@
 package com.jettech.ehcache.config;
 
+import org.hibernate.validator.internal.engine.resolver.CachingTraversableResolverForSingleValidation;
 import org.springframework.cache.CacheManager;
+import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.cache.ehcache.EhCacheCacheManager;
 import org.springframework.cache.ehcache.EhCacheManagerFactoryBean;
@@ -11,7 +13,7 @@ import org.springframework.core.io.ClassPathResource;
 
 @Configuration
 @EnableCaching // 标注启动缓存
-public class CacheConfiguration{
+public class CacheConfiguration extends CachingConfigurerSupport{
 
 	/*
 	 * ehcache主要管理器
