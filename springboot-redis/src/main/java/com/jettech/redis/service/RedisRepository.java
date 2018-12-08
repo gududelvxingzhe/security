@@ -22,22 +22,27 @@ public class RedisRepository<K, V> implements IRedisRepository<K, V> {
     @Autowired
     private RedisTemplate<K,V> redisTemplate;
 
+    //操作字符串
     private BoundValueOperations<K,V> getBoundValueOps(K key) {
         return redisTemplate.boundValueOps(key);
     }
 
+    //操作ZSet
     private BoundZSetOperations<K,V> getBoundZSetOps(K key) {
         return redisTemplate.boundZSetOps(key);
     }
 
+    //操作set
     private BoundSetOperations<K,V> getBoundSetOps(K key) {
         return redisTemplate.boundSetOps(key);
     }
 
+    //操作list
     private BoundListOperations<K,V> getBoundListOps(K key) {
         return redisTemplate.boundListOps(key);
     }
 
+    //操作hash
     private <HK, HV> BoundHashOperations<K, HK, HV> getBoundHashOps(K key) {
         return redisTemplate.boundHashOps(key);
     }
