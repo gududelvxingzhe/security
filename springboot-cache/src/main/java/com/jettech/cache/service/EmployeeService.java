@@ -12,6 +12,7 @@ import com.jettech.cache.bean.Employee;
 import com.jettech.cache.mapper.EmployeeMapper;
 //@CacheConfig(cacheNames="emp")
 @Service
+@CacheConfig(cacheManager="employeeCacheManager")		//指定缓存管理器
 public class EmployeeService {
 
 	@Autowired
